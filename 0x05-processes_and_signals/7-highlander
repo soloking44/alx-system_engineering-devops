@@ -5,7 +5,7 @@
 
 while true
 do
-  display "To infinity and beyond"
+  echo "To infinity and beyond"
   sleep 2
-  trap 'display "I am invincible!!!"' SIGTERM 
+  trap 'echo "I am invincible!!!"' SIGTERM 
 done

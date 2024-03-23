@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-# Create a Bash code that apply SSH to a connection with your server with a private key ~/.ssh/school with the user ubuntu.
-
-ssh -i ~/.ssh/school ubuntu@18.233.66.10

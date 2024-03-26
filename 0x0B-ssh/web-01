@@ -5,7 +5,7 @@
 eval "$(ssh-agent -s)"
 
 # Add the SSH private key to the agent
-ssh-add ~/.ssh/authorized_keys
+ssh-add ~/.ssh/id_rsa
 
 # Connect to the server 
 ssh ubuntu@54.209.112.150

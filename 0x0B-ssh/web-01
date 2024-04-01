@@ -4,7 +4,11 @@
 # Setting up the SSH agent
 eval $("ssh-agent")
 
+<<<<<<< HEAD
 # Path to identityFile
+=======
+# Add the SSH private key to the agent
+>>>>>>> ffc1ce7e797c89c6679bd4af48bc3b7977286d69
 ssh-add ~/.ssh/school
 
 # Username and IP Address 

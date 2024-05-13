@@ -1,25 +1,29 @@
 #!/usr/bin/python3
-"""This process the query subscribers to a Reddit subreddit."""
+"""
+Importing requests module
+"""
 
-import requests
+from requests import get
 
 
 def number_of_subscribers(subreddit):
-    """Queries the Reddit API and returns the number of subscribers
-        for a given subreddit
-    If an invalid subreddit is given, the function should return 0
     """
-    # API endpoint for getting subreddit information
-    url = f'https://www.reddit.com/r/{subreddit}/about.json'
+    function that queries the Reddit API and returns the number of subscribers
+    (not active users, total subscribers) for a given subreddit.
+    """
 
-    # Set a custom User-Agent to avoid too many requests errors
-    headers = {'User-Agent': 'My User Agent 1.0'}
-
-    # Send a Get request
-    response = requests.get(url, headers=headers,
-                            allow_redirects=False).json()
-    subscribers = response.get('data', {}).get('subscribers')
-
-    if not subscribers:
+    if subreddit is None or not isinstance(subreddit, str):
         return 0
-    return subscribers
+
+    user_agent = {'User-agent': 'Google Chrome Version 81.0.4044.129'}
+    url = 'https://www.reddit.com/r/{}/about.json'.format(subreddit)
+    response = get(url, headers=user_agent)
+    all_data = response.json()
+
+    try:
+        return all_data.get('data').get('subscribers')
+
+    except:
+        return 0  # Fixing comment format
+
+# Output: nonexisting subreddit
